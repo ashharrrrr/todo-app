@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mew Todo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <nav>
+        <div class="logo">Mew Todo</div>
+        <div class="nav-links"></div>
+      </nav>
+    </header>
+    <div class="hero">
+      <div class="projects">
+        <h3 class="projects-heading">Projects</h3>
+        <div class="project-list"></div>
+        <button class="new-project-btn" onclick="d.showModal()">
+          <img src="./add-button.svg" />
+          Create Project
+        </button>
+      </div>
+      <div class="todos">
+        <div class="current-heading">
+          <h3 class="project-name"></h3>
+          <p class="project-description"></p>
+        </div>
+        <div class="tasks">
+          <div class="task-list"></div>
+          <button class="add-task" onclick="t.showModal()">Add task</button>
+        </div>
+      </div>
+    </div>
+    <dialog id="d">
+      <button id="close-d" onclick="d.close()"><img src="close-button.svg"></button>
+      <form id="project" method="dialog" action="#">
+        <div class="input-group">
+          <label for="project-name">Name</label>
+          <input type="text" name="" id="project-name" />
+        </div>
+        <div class="input-group">
+          <label for="project-description">Description</label>
+          <input type="text" name="" id="project-description" />
+        </div>
+        <button class="add-project-btn" type="submit">Add Project</button>
+      </form>
+    </dialog>
+    <dialog id="t">
+      <button onclick="t.close()">close</button>
+      <form action="#" id="task" method="dialog">
+        <div class="input-group">
+          <label for="task-name">Name</label>
+          <input type="text" name="" id="task-name" />
+        </div>
+        <div class="input-group">
+          <label for="task-description">Description</label>
+          <input type="text" name="" id="task-description" />
+        </div>
+        <div class="input-group">
+          <label for="task-due-date">Due Date</label>
+          <input type="date" name="" id="task-due-date" />
+        </div>
+        <button class="add-task-button" type="submit">Add</button>
+      </form>
+    </dialog>
+    <script src="main.js"></script>
+  </body>
+</html>
